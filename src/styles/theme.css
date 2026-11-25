@@ -1,0 +1,83 @@
+/* Tema "laboratorio / osciloscopio": oscuro por defecto, con variante clara.
+   Tokens de color, tipografía y espaciado como custom properties. */
+
+:root {
+  color-scheme: dark light;
+
+  /* Paleta base (oscuro) */
+  --bg: #0a0e14;
+  --bg-elev: #121823;
+  --bg-elev-2: #1a2231;
+  --surface-border: #243043;
+  --text: #e6edf3;
+  --text-muted: #9aa7b8;
+  --text-faint: #64748b;
+
+  /* Acentos (verde fósforo + ámbar, estética de instrumento de medida) */
+  --accent: #35e08a;
+  --accent-soft: color-mix(in srgb, var(--accent) 18%, transparent);
+  --accent-2: #ffb454;
+  --danger: #ff5c7a;
+  --info: #4aa8ff;
+
+  /* Estado de los nodos del flujo */
+  --node-pending: #2a3647;
+  --node-visited: color-mix(in srgb, var(--accent) 45%, var(--bg-elev-2));
+  --node-active: var(--accent);
+
+  /* Tipografía fluida */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', 'Fira Code', Menlo, monospace;
+  --fs-300: clamp(0.78rem, 0.74rem + 0.2vw, 0.88rem);
+  --fs-400: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
+  --fs-500: clamp(1.05rem, 0.98rem + 0.4vw, 1.25rem);
+  --fs-600: clamp(1.3rem, 1.15rem + 0.8vw, 1.8rem);
+  --fs-700: clamp(1.7rem, 1.4rem + 1.5vw, 2.6rem);
+
+  /* Espaciado y formas */
+  --space-1: 0.35rem;
+  --space-2: 0.6rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  --shadow: 0 10px 40px -12px rgb(0 0 0 / 0.6);
+}
+
+:root:not([data-theme='dark']) {
+  @media (prefers-color-scheme: light) {
+    --bg: #f4f6fb;
+    --bg-elev: #ffffff;
+    --bg-elev-2: #eef1f7;
+    --surface-border: #d4dae6;
+    --text: #141a24;
+    --text-muted: #4a5668;
+    --text-faint: #7b879a;
+    --accent: #0f9d58;
+    --accent-2: #c9700a;
+    --danger: #d12d4e;
+    --info: #1b74d6;
+    --node-pending: #d4dae6;
+    --node-visited: color-mix(in srgb, var(--accent) 35%, var(--bg-elev-2));
+    --shadow: 0 10px 30px -14px rgb(0 0 0 / 0.25);
+  }
+}
+
+:root[data-theme='light'] {
+  --bg: #f4f6fb;
+  --bg-elev: #ffffff;
+  --bg-elev-2: #eef1f7;
+  --surface-border: #d4dae6;
+  --text: #141a24;
+  --text-muted: #4a5668;
+  --text-faint: #7b879a;
+  --accent: #0f9d58;
+  --accent-2: #c9700a;
+  --danger: #d12d4e;
+  --info: #1b74d6;
+  --node-pending: #d4dae6;
+  --node-visited: color-mix(in srgb, var(--accent) 35%, var(--bg-elev-2));
+  --shadow: 0 10px 30px -14px rgb(0 0 0 / 0.25);
+}
